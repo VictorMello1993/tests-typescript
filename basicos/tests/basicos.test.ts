@@ -3,6 +3,8 @@ import { Utils } from "../src/Utils";
 describe("Max function test", () => {
 	it("Should be returned the highest number", () => {
 		expect(Utils.max([-2, -1, -5, 10, 8, 80, 25])).toBe(80);
+		expect(Utils.max([-2, -1, -5, -200, -56, -9, -125])).toBe(-1);
+		expect(Utils.max([20, 5, 8, 1, 25, 22, 50, 30])).toBe(50);
 	});
 
 	it("Should return null if there's no number", () => {
