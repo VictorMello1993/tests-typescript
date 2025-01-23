@@ -33,9 +33,9 @@ describe("sumArray function test", () => {
 		expect(Utils.sumArray([])).toBe(0);
 	});
 
-	test('Return the sum of all type of numbers, including float and int', () => {
+	test("Return the sum of all type of numbers, including float and int", () => {
 		expect(Utils.sumArray([-2, -1, -5, 10, 8.2, 3.14, 1.5, -0.5])).toBe(14.34);
-	})
+	});
 });
 
 describe("rangeNumber function test (for int numbers)", () => {
@@ -46,17 +46,17 @@ describe("rangeNumber function test (for int numbers)", () => {
 	const min = 0;
 
 	it("Should return the value if it's within the range", () => {
-		const value = 5
+		const value = 5;
 		expect(Utils.rangeNumber(value, min, max)).toBe(value);
 	});
 
 	it("Should return min if the value is less than it", () => {
-		const value = -20
+		const value = -20;
 		expect(Utils.rangeNumber(value, min, max)).toBe(min);
 	});
 
 	it("Should return max the value is greater than it", () => {
-		const value = 100
+		const value = 100;
 		expect(Utils.rangeNumber(value, min, max)).toBe(max);
 	});
 });
@@ -65,17 +65,17 @@ describe("rangeNumber function test (for float numbers)", () => {
 	const max = 10.999;
 	const min = -9.5;
 	it("Should return the value if it's within the range", () => {
-		const value = 5
+		const value = 5;
 		expect(Utils.rangeNumber(value, min, max)).toBe(value);
 	});
 
 	it("Should return min if the value is less than it", () => {
-		const value = -20
+		const value = -20;
 		expect(Utils.rangeNumber(value, min, max)).toBe(min);
 	});
 
 	it("Should return max the value is greater than it", () => {
-		const value = 100
+		const value = 100;
 		expect(Utils.rangeNumber(value, min, max)).toBe(max);
 	});
 });
