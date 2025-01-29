@@ -23,7 +23,7 @@ export class Utils {
 		return Array.from(new Set(array));
 	}
 
-	static upperCaseString(s: string): string {
+	static capitalizeString(s: string): string {
 		if (!s) return "";
 		return s
 			.split(" ")
