@@ -41,14 +41,62 @@ describe("diffArray function test", () => {
 	});
 });
 
-it("Should remove duplicates", () => {
-	const arr = [10, 20, 30, 30, 25, 50];
+describe("removeDuplicates function test", () => {
+	it("Should remove duplicates from numeric array", () => {
+		const arr = [10, 20, 30, 30, 25, 50, -90, -20, -90, 6.99, 1.25, -0.99, 1.25, -0.99];
 
-	expect(Utils.removeDuplicates(arr)).toEqual([10, 20, 30, 25, 50]);
+		expect(Utils.removeDuplicates(arr)).toEqual([10, 20, 30, 25, 50, -90, -20, 6.99, 1.25, -0.99]);
+	});
+
+	it("Should remove duplicates from string array", () => {
+		const arr = ["banana", "apple", "orange", "apple", "pinapple", "banana"];
+
+		expect(Utils.removeDuplicates(arr)).toEqual(["banana", "apple", "orange", "pinapple"]);
+	});
+
+	it("Should remove duplicates from boolean array", () => {
+		const arr = [true, false, false, true, false, true, true];
+
+		expect(Utils.removeDuplicates(arr)).toEqual([true, false]);
+	});
+
+	it("Should return empty if array is empty", () => {
+		expect(Utils.removeDuplicates([])).toEqual([]);
+	});
 });
 
-test("Capitalize a string", () => {
-	const name = "victor santos de mello";
+describe("capitalizeString function test", () => {
+	it("Should capitalize an upper case string", () => {
+		const str = "VICTOR SANTOS DE MELLO";
+		expect(Utils.capitalizeString(str)).toBe("Victor Santos De Mello");
+	});
 
-	expect(Utils.capitalizeString(name)).toBe("Victor Santos De Mello");
+	it("Should capitalize an lower case string", () => {
+		const str = "victor santos de mello";
+		expect(Utils.capitalizeString(str)).toBe("Victor Santos De Mello");
+	});
+
+	it("Should capitalize an alphanumeric string", () => {
+		const str = "0vict0r s4nt0s 1de m3ll0";
+		expect(Utils.capitalizeString(str)).toBe("0vict0r S4nt0s 1de M3ll0");
+	});
+
+	it("Should not change a numeric string", () => {
+		const str = "11 2234984 8946977";
+		expect(Utils.capitalizeString(str)).toBe("11 2234984 8946977");
+	});
+
+	it("Should return empty if a string is empty", () => {
+		expect(Utils.capitalizeString("")).toBe("");
+	});
+
+	it("Should not change a special characters string", () => {
+		const str = "!##$&#**#))##@";
+		expect(Utils.capitalizeString(str)).toBe(str);
+	});
+
+	it("Should capitalize string with special characters cotaining letters", () => {
+		const str = "!##$&Basic**#))##@";
+		expect(Utils.capitalizeString(str)).toBe("!##$&basic**#))##@");
+	});
 });
