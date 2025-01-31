@@ -95,7 +95,7 @@ describe("capitalizeString function test", () => {
 		expect(Utils.capitalizeString(str)).toBe(str);
 	});
 
-	it("Should capitalize string with special characters cotaining letters", () => {
+	it("Should capitalize string with special characters containing letters", () => {
 		const str = "!##$&Basic**#))##@";
 		expect(Utils.capitalizeString(str)).toBe("!##$&basic**#))##@");
 	});
