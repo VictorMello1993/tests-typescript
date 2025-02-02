@@ -39,8 +39,8 @@ export class Utils {
 		return array.find((item: any) => item.id === id);
 	}
 
-	static invertObject(objeto: any): any {
-		return Object.entries(objeto).reduce(
+	static invertObject(object: any): any {
+		return Object.entries(object).reduce(
 			(newObject, [key, value]) => {
 				if (typeof value === "object") {
 					newObject[JSON.stringify(value) as string] = key;
@@ -53,7 +53,7 @@ export class Utils {
 		);
 	}
 
-	static removeProperty(object: { [chaves: string]: any }, property: string): any {
+	static removeProperty(object: { [keys: string]: any }, property: string): any {
 		const newObject = { ...object };
 		delete newObject[property];
 		return newObject;
